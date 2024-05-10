@@ -7,7 +7,7 @@
  <c:if test = "${message != null}">
  	<p>${message}</p>
  </c:if>
-<form action="addBoard.do">
+<form action="addBoard.do" method="post" enctype="multipart/form-data">
 	<table class="table">
 		<tr>
 			<th>제목</th>
@@ -21,8 +21,12 @@
 			<th>작성자</th>
 			<td><input type="text" name="writer" value="${logId}" readonly></td>
 		</tr>
+		<tr>
+			<th>파일</th>
+			<td><input type="file" name="myImg"></td>
+		</tr>
 		<tr align="center">
-			<td colspan="2"><input type="submit" class="btn btn-primary" value="입력"></td>
+			<td colspan="2"><input type="submit" class="btn btn-primary" value="글쓰기"></td>
 		</tr>
 	</table>
 </form>
