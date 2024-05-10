@@ -17,12 +17,15 @@ public class BoardInfoControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String path = "WEB-INF/board/board.jsp";
 		String bno = req.getParameter("bno");
+		String page = req.getParameter("page");
+		
 		BoardServiceImpl svc = new BoardServiceImpl();
 		BoardVO vo = new BoardVO();
 		vo = svc.getBoard(Integer.parseInt(bno)); // 상세 조회
 		svc.addViewCnt(Integer.parseInt(bno)); // 조회수 증가
 		
 		req.setAttribute("result", vo);
+		req.setAttribute("page", page);
 
 		RequestDispatcher rd = req.getRequestDispatcher(path);
 		rd.forward(req, resp);

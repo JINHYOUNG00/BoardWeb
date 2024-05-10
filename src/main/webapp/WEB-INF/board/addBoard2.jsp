@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="../includes/header.jsp"></jsp:include>
+ <%
+  		String logId = (String)session.getAttribute("logId");
+  		String msg = (String)request.getAttribute("message");
+ %>
 
-
- <c:if test = "${message != null}">
- 	<p>${message}</p>
- </c:if>
+ <% if (msg != null)  {%>
+ 	<p><%=msg%></p>
+ <%} %>
 <form action="addBoard.do">
 	<table class="table">
 		<tr>
@@ -19,7 +21,7 @@
 		</tr>
 		<tr>
 			<th>작성자</th>
-			<td><input type="text" name="writer" value="${logId}" readonly></td>
+			<td><input type="text" name="writer" value="<%=logId%>" readonly></td>
 		</tr>
 		<tr align="center">
 			<td colspan="2"><input type="submit" class="btn btn-primary" value="입력"></td>
