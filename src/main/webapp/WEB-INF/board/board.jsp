@@ -30,7 +30,7 @@
 				<td colspan="4">
 					<pre>${result.content }</pre>
 					<c:if test="${result.img != null }">
-						<br><img alt="test1" src="images\/${result.img}" class="view_context_img">
+						<img alt="test1" src="images\/${result.img}" class="view_context_img">
 					</c:if>
 					
 				</td>

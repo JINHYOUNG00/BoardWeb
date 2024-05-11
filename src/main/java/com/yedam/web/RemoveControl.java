@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.common.Control;
+import com.yedam.service.BoardService;
 import com.yedam.service.BoardServiceImpl;
-import com.yedam.vo.BoardVO;
 
 public class RemoveControl implements Control {
 
@@ -18,7 +18,7 @@ public class RemoveControl implements Control {
 				System.out.println(req.getParameter("bno"));
 				String boardNo = req.getParameter("bno");
 				System.out.println(boardNo);
-				BoardServiceImpl svc = new BoardServiceImpl();
+				BoardService svc = new BoardServiceImpl();
 				
 				
 				if(svc.removeBoard(Integer.parseInt(boardNo))) {

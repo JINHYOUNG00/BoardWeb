@@ -1,13 +1,12 @@
 package com.yedam.common;
 
-import java.util.List;
-
+import com.yedam.service.BoardService;
 import com.yedam.service.BoardServiceImpl;
 import com.yedam.vo.BoardVO;
 
 public class BoardTest {
 	public static void main(String[] args) {
-		BoardServiceImpl svc = new BoardServiceImpl();
+		BoardService svc = new BoardServiceImpl();
 		BoardVO vo = new BoardVO();
 		
 //		vo.setTitle("등록제목");

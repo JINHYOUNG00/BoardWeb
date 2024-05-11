@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.common.Control;
+import com.yedam.service.BoardService;
 import com.yedam.service.BoardServiceImpl;
 import com.yedam.vo.BoardVO;
 
@@ -21,7 +22,7 @@ public class ModifyControl implements Control {
 		String page = req.getParameter("page");
 	
 		
-		BoardServiceImpl svc = new BoardServiceImpl();
+		BoardService svc = new BoardServiceImpl();
 		BoardVO vo = new BoardVO();
 		vo.setTitle(title);
 		vo.setContent(content);

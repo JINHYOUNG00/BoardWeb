@@ -1,7 +1,6 @@
 package com.yedam.web;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.yedam.common.Control;
 import com.yedam.service.BoardService;
 import com.yedam.service.BoardServiceImpl;
-import com.yedam.vo.BoardVO;
 
 public class AddFormControl implements Control {
 

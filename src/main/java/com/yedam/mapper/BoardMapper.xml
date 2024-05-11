@@ -13,12 +13,11 @@
 		            from (
 		                        select b.* 
 		                        from tbl_boards b
-		                        order by b.board_no
+		                        order by b.board_no desc
 		                        ) a
 		            <![CDATA[
 		            where rownum <= (#{page} * 10) 
-		            ]]>            
-		            
+		            ]]>
 		            ) r
 		where r.rn > (#{page} - 1) * 10
 	</select>
