@@ -17,7 +17,7 @@
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td><textarea name="content" cols="30" rows="4">${result.content }></textarea></td>
+			<td><textarea name="content" cols="30" rows="4">${result.content }</textarea></td>
 		</tr>
 		<tr>
 			<th>작성자</th>

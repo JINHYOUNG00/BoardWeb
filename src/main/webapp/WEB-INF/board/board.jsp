@@ -27,11 +27,21 @@
 				<td>${result.writer }</td>
 			</tr>
 			<tr>
-				<td colspan="4">${result.content }</td>
+				<td colspan="4">
+					<pre>${result.content }</pre>
+					<c:if test="${result.img != null }">
+						<br><img alt="test1" src="images\/${result.img}" class="view_context_img">
+					</c:if>
+					
+				</td>
 			</tr>
 			<tr>
 				<th>작성일자</th>
 				<td colspan="3">${result.createDate }</td>
+			</tr>
+			<tr>
+				<th>첨부파일</th>
+				<td colspan="3">${result.img }</td>
 			</tr>
 			<tr align="center">
 				<td colspan="4"><button class="btn btn-primary" id="modBtn">수정</button>

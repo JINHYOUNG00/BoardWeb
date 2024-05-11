@@ -23,7 +23,11 @@
 		</tr>
 		<tr>
 			<th>파일</th>
-			<td><input type="file" name="myImg"></td>
+			<td>
+				파일 1 : <input type="file" name="myImg"><br>
+				파일 2 : <input type="file" name="myImg"><br>
+				파일 3 : <input type="file" name="myImg">
+			</td>
 		</tr>
 		<tr align="center">
 			<td colspan="2"><input type="submit" class="btn btn-primary" value="글쓰기"></td>
