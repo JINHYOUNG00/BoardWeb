@@ -1,35 +1,15 @@
 package com.yedam.common;
 
-import com.yedam.service.BoardService;
-import com.yedam.service.BoardServiceImpl;
-import com.yedam.vo.BoardVO;
+import org.apache.ibatis.session.SqlSession;
+
+import com.yedam.mapper.ReplyMapper;
 
 public class BoardTest {
 	public static void main(String[] args) {
-		BoardService svc = new BoardServiceImpl();
-		BoardVO vo = new BoardVO();
+		SqlSession session = DataSource.getInstance().openSession(true);
+		ReplyMapper mapper = session.getMapper(ReplyMapper.class);
 		
-//		vo.setTitle("등록제목");
-//		vo.setContent("등록내용");
-//		vo.setWriter("user00");
-//		
-//		if(svc.addBoard(vo)) {
-//			System.out.println("등록성공");
-//		} else {
-//			System.out.println("등록실패");
-//		}
-//		
-//		List<BoardVO> list = svc.boardList();
-//		for (BoardVO boardVO : list) {
-//			System.out.println(boardVO.toString());
-//		}
-		
-		vo = svc.getBoard(1);
-		
-		if(vo != null) {
-			System.out.println(vo.toString());
-		} else {
-			System.out.println("조회결과 없음");
-		}
+		mapper.replyList(525356)//
+			.forEach(reply ->System.out.println(reply));
 	}
 }

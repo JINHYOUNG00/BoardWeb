@@ -16,6 +16,7 @@ public class AddFormControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String path = "WEB-INF/board/addBoard.jsp";
+		path = "board/addBoard.tiles";
 //		String page = req.getParameter("page");
 
 		BoardService boardService = new BoardServiceImpl();

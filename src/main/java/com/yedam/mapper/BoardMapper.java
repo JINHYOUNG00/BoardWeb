@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.yedam.common.SearchVO;
 import com.yedam.vo.BoardVO;
 import com.yedam.vo.MemberVO;
 
@@ -11,9 +12,9 @@ public interface BoardMapper {
 	// 게시판 목록조회
 	public List<BoardVO> boardList();
 	// 페이징
-	public List<BoardVO> boardListPaging(int pageNo);
+	public List<BoardVO> boardListPaging(SearchVO search);
 	// 전체건수계산
-	public int getTotalCnt();
+	public int getTotalCnt(SearchVO search);
 	
 	// 게시판 등록
 	public int insertBoard(BoardVO board);

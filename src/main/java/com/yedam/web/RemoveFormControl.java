@@ -17,6 +17,7 @@ public class RemoveFormControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String path = "WEB-INF/board/removeBoard.jsp";
+		path = "board/removeBoard.tiles";
 		String bno = req.getParameter("bno");
 		BoardService svc = new BoardServiceImpl();
 		BoardVO vo = new BoardVO();

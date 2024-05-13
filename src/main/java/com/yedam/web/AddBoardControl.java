@@ -19,19 +19,14 @@ public class AddBoardControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// title, content, writer
-		String path = "WEB-INF/board/addBoard.jsp";
 		// mutipart 요청처리를 위한 처리 
 		// 생성자 매개변수(1.request 정보 2.저장 경로 3.max사이즈 4.인코딩 5.리네임정책(동일이름파일처리))
 		String savePath = req.getServletContext().getRealPath("images");
 		int maxSize = 5 * 1024 * 1024; // 5MB
-		MultipartRequest mr =  new MultipartRequest(
-				req,
-				savePath,
-				maxSize,
-				"utf-8" //
-				, new DefaultFileRenamePolicy() // 서버 디렉토리 폴더안에 이미 같은이름의 파일이 있다면 뒤에 번호를 써서 구분함
-				); 
+		MultipartRequest mr =  new MultipartRequest(req, savePath, maxSize, "utf-8" //
+				, new DefaultFileRenamePolicy());
 		
+		String path = "WEB-INF/board/addBoard.jsp";
 		String title = mr.getParameter("title");
 		String content = mr.getParameter("content");
 		String writer = mr.getParameter("writer");

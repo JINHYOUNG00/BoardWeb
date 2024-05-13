@@ -2,15 +2,17 @@ package com.yedam.service;
 
 import java.util.List;
 
+import com.yedam.common.SearchVO;
 import com.yedam.vo.BoardVO;
 import com.yedam.vo.MemberVO;
 
 public interface BoardService {
 		// 게시판 목록조회
 //		public List<BoardVO> boardList();
-		public List<BoardVO> boardList(int page);
+//		public List<BoardVO> boardList(int page);
+		public List<BoardVO> boardList(SearchVO search);
 		
-		public int getTotal();
+		public int getTotal(SearchVO search);
 		
 		// 게시판 등록
 		public boolean addBoard(BoardVO board);

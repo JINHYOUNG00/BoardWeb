@@ -4,6 +4,11 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 	<display-name>BoardWeb</display-name>
+	<!-- 타일즈 리스터 세팅 -->
+	<listener>
+		<listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
+	</listener>
+	<!-- 타일즈 리스터 세팅 end -->
 	<!-- 서블릿과 url 매칭. -->
 	<servlet>
 		<servlet-name>first</servlet-name>
@@ -13,7 +18,7 @@
 		<servlet-name>first</servlet-name>
 		<url-pattern>/first.action</url-pattern>
 	</servlet-mapping>
-
+	<!-- 서블릿과 url 매칭. end -->
 	<!-- .do로 끝나는 url은 모두 frontController 서블릿과 연결 -->
 	<servlet>
 		<servlet-name>frontController</servlet-name>
@@ -23,7 +28,16 @@
 		<servlet-name>frontController</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-
+	<!-- 타일즈 서블릿 -->
+	<servlet>
+		<servlet-name>Tiles Dispatch Servlet</servlet-name>
+		<servlet-class>org.apache.tiles.web.util.TilesDispatchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Tiles Dispatch Servlet</servlet-name>
+		<url-pattern>*.tiles</url-pattern>
+	</servlet-mapping>
+	<!-- 타일즈 서블릿 end -->
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

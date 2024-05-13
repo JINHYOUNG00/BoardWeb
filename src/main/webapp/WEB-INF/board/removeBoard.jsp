@@ -1,7 +1,6 @@
 <%@page import="com.yedam.vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:include page="../includes/header.jsp"></jsp:include>
 <%
 BoardVO vo = (BoardVO) request.getAttribute("result");
 String logId = (String)session.getAttribute("logId");
@@ -20,7 +19,6 @@ String msg = (String)request.getAttribute("message");
 	</table>
 	<input type="hidden" name="bno" value="<%=vo.getBoardNo()%>">
 </form>
-<jsp:include page="../includes/footer.jsp"></jsp:include>
 <script type="text/javascript">
 
 	const logId = "<%=logId %>";
